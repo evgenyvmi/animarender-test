@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  main:
+    build: .
+    image: animarender-core
+    ports:
+      - '8888:8888'
+      - '2201:22'
+    volumes:
+      - './animarender-core:/root/animarender-test/animarender-test'
+    stdin_open: true
+    tty: true
+    environment:
+      MYSQL_ROOT_PASSWORD: 'vangok'
+      MYSQL_DATABASE: 'ANIMA'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'vangok'
